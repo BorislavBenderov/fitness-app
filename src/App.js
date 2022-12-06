@@ -5,6 +5,7 @@ import { Fitness } from './components/fitness/Fitness';
 import { FitnessPrograms } from './components/fitness-programs/FitnessPrograms';
 import { AuthContextProvider } from './contexts/AuthContext';
 import { FullBodyProgram } from './components/fitness-programs/FullBodyProgram';
+import { UpperLowerProgram } from './components/fitness-programs/UpperLowerProgram';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/fitness' element={<Fitness />} />
           <Route path='/fitness-programs' element={<FitnessPrograms />} />
           <Route path='/fitness-programs/fullbody' element={<FullBodyProgram />} />
+          <Route path='/fitness-programs/upper-lower' element={<UpperLowerProgram />} />
         </Routes>
       </div>
     </AuthContextProvider>
