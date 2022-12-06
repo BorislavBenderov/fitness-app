@@ -30,10 +30,7 @@ export const Register = () => {
                 createUserWithEmailAndPassword(auth, email, password)
                     .then((res) => {
                         setDoc(doc(database, 'calories', res.user.uid), {
-                            maintenance: 0,
-                            muscleGain: 0,
-                            fatLoss: 0,
-                            uid: res.user.uid
+                            email: res.user.email
                         })
                         navigate('/fitness');
                     })
