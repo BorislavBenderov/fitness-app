@@ -8,11 +8,13 @@ import { FullBodyProgram } from './components/fitness-programs/FullBodyProgram';
 import { UpperLowerProgram } from './components/fitness-programs/UpperLowerProgram';
 import { PushPullLegsProgram } from './components/fitness-programs/PushPullLegsProgram';
 import { Calories } from './components/calories/Calories';
+import { Header } from './components/header/Header';
 
 function App() {
   return (
     <AuthContextProvider>
       <div className="App">
+        <Header />
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/register' element={<Register />} />
