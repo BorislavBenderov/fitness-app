@@ -1,6 +1,7 @@
 import { browserLocalPersistence, createUserWithEmailAndPassword, setPersistence } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from '../../firebaseConfig';
+import { auth, database } from '../../firebaseConfig';
 
 export const Register = () => {
     const navigate = useNavigate();
@@ -27,7 +28,13 @@ export const Register = () => {
         setPersistence(auth, browserLocalPersistence)
             .then(() => {
                 createUserWithEmailAndPassword(auth, email, password)
-                    .then(() => {
+                    .then((res) => {
+                        setDoc(doc(database, 'calories', res.user.uid), {
+                            maintenance: 0,
+                            muscleGain: 0,
+                            fatLoss: 0,
+                            uid: res.user.uid
+                        })
                         navigate('/fitness');
                     })
                     .catch((err) => {
@@ -35,7 +42,7 @@ export const Register = () => {
                     })
             })
     }
-    
+
     return (
         <div className="auth">
             <div className="auth__container">
