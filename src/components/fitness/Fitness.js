@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import FITNESSIMG from '../../assets/fitness.jpg';
 
 export const Fitness = () => {
@@ -7,13 +8,13 @@ export const Fitness = () => {
                 <header className="header__container">
                     <ul className="nav">
                         <li>
-                            <a href="/posts">Home</a>
+                            <Link to="/fitness">Home</Link>
                         </li>
                         <li>
-                            <a href="/messages">Programs</a>
+                            <Link to="/fitness-programs">Programs</Link>
                         </li>
                         <li>
-                            <a href="/messages">Logout</a>
+                            <Link to="#">Logout</Link>
                         </li>
                     </ul>
                 </header>
