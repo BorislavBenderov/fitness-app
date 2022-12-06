@@ -7,6 +7,7 @@ import { AuthContextProvider } from './contexts/AuthContext';
 import { FullBodyProgram } from './components/fitness-programs/FullBodyProgram';
 import { UpperLowerProgram } from './components/fitness-programs/UpperLowerProgram';
 import { PushPullLegsProgram } from './components/fitness-programs/PushPullLegsProgram';
+import { Calories } from './components/calories/Calories';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/fitness-programs/fullbody' element={<FullBodyProgram />} />
           <Route path='/fitness-programs/upper-lower' element={<UpperLowerProgram />} />
           <Route path='/fitness-programs/push-pull-legs' element={<PushPullLegsProgram />} />
+          <Route path='/calories' element={<Calories />} />
         </Routes>
       </div>
     </AuthContextProvider>
