@@ -211,3 +211,42 @@ input:focus {
     margin-bottom: 20px;
     color: white;
 }
+
+.program__structure {
+    width: 500px;
+    margin: auto;
+}
+
+.program__day {
+    background-color: rgba(255, 0, 0, 0.661);
+    color: white;
+    border: 1px solid black;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.program__day h1 {
+    text-align: center;
+    color: white;
+}
+
+.exercises__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.exercises h4,
+.sets__reps p {
+    text-align: center;
+}
+
+.exercises p,
+.sets__reps p {
+    margin-top: 10px;
+}
+
+.exercises h4,
+.sets__reps h4 {
+    color: rgb(75, 74, 74);
+}
