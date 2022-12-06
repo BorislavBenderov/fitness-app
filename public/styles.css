@@ -135,21 +135,8 @@ input:focus {
 
 .fitness {
     display: flex;
-    margin: 0 100px;
-}
-
-.fitness__content {
-    width: 50%;
-}
-
-.fitness__img {
-    width: 50%;
-    height: 900px;
-    border-radius: 0 0 16px 16px;
-}
-
-.fitness__img img {
-    border-radius: 0 0 32px 32px;
+    width: 500px;
+    margin: 0 auto;
 }
 
 .nav {
@@ -236,7 +223,6 @@ input:focus {
     justify-content: space-between;
 }
 
-.exercises h4,
 .sets__reps p {
     text-align: center;
 }
@@ -249,4 +235,19 @@ input:focus {
 .exercises h4,
 .sets__reps h4 {
     color: rgb(75, 74, 74);
+}
+
+.calories {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(255, 0, 0, 0.661);
+    padding: 5px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+}
+
+.calories p {
+    margin-bottom: 10px;
 }
