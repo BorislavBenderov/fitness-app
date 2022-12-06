@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Login } from './components/auth/Login';
 import { Register } from './components/auth/Register';
+import { Fitness } from './components/fitness/Fitness';
 import { AuthContextProvider } from './contexts/AuthContext';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/fitness' element={<Fitness />} />
         </Routes>
       </div>
     </AuthContextProvider>
