@@ -1,11 +1,22 @@
-import { doc, updateDoc } from "firebase/firestore";
-import { useContext } from "react";
+import { collection, doc, onSnapshot, updateDoc } from "firebase/firestore";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { database } from "../../firebaseConfig";
 
 export const Calories = () => {
+    const [calories, setCalories] = useState([]);
     const { loggedUser } = useContext(AuthContext);
 
+    useEffect(() => {
+        onSnapshot(collection(database, 'calories'), (snapshot) => {
+            setCalories(snapshot.docs.map((item) => {
+                return { ...item.data(), id: item.id }
+            }));
+        });
+    }, []);
+
+    const currentUserCalories = calories.find(calorie => calorie.id === loggedUser.uid);
+    console.log(currentUserCalories);
 
     const onClick = async (e) => {
         e.preventDefault();
@@ -86,6 +97,14 @@ export const Calories = () => {
                         <option value="extraactive">Extra active (very hard exercise/sports & a physical job)</option>
                     </select>
                     <button type="submit">Calculate</button>
+                    {currentUserCalories?.maintenance
+                        ? <div className="calories">
+                            <p>Daily Calories to:</p>
+                            <p>Mantain Weight - {currentUserCalories.maintenance}</p>
+                            <p>Gain Muscle - {currentUserCalories.muscleGain}</p>
+                            <p>Loss Fat - {currentUserCalories.fatLoss}</p>
+                        </div>
+                        : ''}
                 </form>
             </div>
         </div>
