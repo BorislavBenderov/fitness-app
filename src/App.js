@@ -19,9 +19,9 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
-            <Route path='/' element={<Login />} />
+            <Route path='/' element={<Fitness />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/fitness' element={<Fitness />} />
+            <Route path='/login' element={<Login />} />
             <Route path='/fitness-programs' element={<FitnessPrograms />} />
             <Route path='/fitness-programs/fullbody' element={<FullBodyProgram />} />
             <Route path='/fitness-programs/upper-lower' element={<UpperLowerProgram />} />
