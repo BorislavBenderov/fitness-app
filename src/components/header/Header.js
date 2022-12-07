@@ -11,6 +11,9 @@ export const Header = () => {
                     <Link to="/calories">Calories</Link>
                 </li>
                 <li>
+                    <Link to="/weight">Weight</Link>
+                </li>
+                <li>
                     <Link to="/fitness-programs">Programs</Link>
                 </li>
                 <li>
