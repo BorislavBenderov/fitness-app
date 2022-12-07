@@ -15,20 +15,30 @@ export const Calories = () => {
 
         const formData = new FormData(e.target);
 
-        const weight = formData.get('weight');
-        const height = formData.get('height');
-        const age = formData.get('age');
+        const weight = Number(formData.get('weight'));
+        const height = Number(formData.get('height'));
+        const age = Number(formData.get('age'));
         const sex = formData.get('sex');
         const activity = formData.get('activity');
+
+        if (weight === '' || height === '' || age === '') {
+            alert('Please fill all the fields!');
+            return;
+        }
+
+        if (weight !== Number(weight) || height !== Number(height) || age !== Number(age)) {
+            alert('Please add a number!');
+            return;
+        }
 
         let bmr = 0;
 
         switch (sex) {
             case 'female':
-                bmr = 655.1 + (9.563 * Number(weight) + (1.850 * Number(height)) - (4.676 * Number(age)));
+                bmr = 655.1 + (9.563 * weight + (1.850 * height) - (4.676 * age));
                 break;
             case 'male':
-                bmr = 66.5 + (13.75 * Number(weight) + (5.003 * Number(height)) - (6.75 * Number(age)));
+                bmr = 66.5 + (13.75 * weight + (5.003 * height) - (6.75 * age));
                 break;
         }
 
@@ -52,8 +62,8 @@ export const Calories = () => {
         }
 
         const maintenance = Number(bmr.toFixed(2));
-        const muscleGain = maintenance + 300;
-        const fatLoss = maintenance - 400;
+        const muscleGain = Number((maintenance + 300).toFixed(2));
+        const fatLoss = Number((maintenance - 400).toFixed(2));
 
         try {
             await updateDoc(doc(database, 'fitness', loggedUser.uid), {
