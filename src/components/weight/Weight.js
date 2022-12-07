@@ -26,6 +26,13 @@ export const Weight = () => {
         const saturdayWeight = Number(formData.get('saturdayWeight'));
         const sundayWeight = Number(formData.get('sundayWeight'));
 
+        if (mondayWeight !== Number(mondayWeight) || tuesdayWeight !== Number(tuesdayWeight) || wednesdayWeight !== Number(wednesdayWeight) ||
+            thursdayWeight !== Number(thursdayWeight) || fridayWeight !== Number(fridayWeight) || saturdayWeight !== Number(saturdayWeight) ||
+            sundayWeight !== Number(sundayWeight)) {
+            alert('Please add a number!');
+            return;
+        }
+
         arr.push(mondayWeight, tuesdayWeight, wednesdayWeight, thursdayWeight, fridayWeight, saturdayWeight, sundayWeight);
 
         const dailyWeights = arr.filter(weight => weight !== 0);
