@@ -137,7 +137,7 @@ input:focus {
 
 .fitness {
     display: flex;
-    margin-top: 50px;
+    margin-top: 120px;
 }
 
 .fitness__content {
@@ -197,6 +197,27 @@ input:focus {
     width: 500px;
     margin: auto;
     text-align: center;
+}
+
+.fitness__cal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.fitness__cal h1 {
+    font-size: 45px;
+    text-align: end;
+}
+
+.fitness__cal p {
+    font-size: 20px;
+    text-align: end;
+}
+
+.food__img {
+    height: 360px;
+    width: 420px;
 }
 
 .program__container {
