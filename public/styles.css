@@ -286,3 +286,31 @@ input:focus {
 .calories p {
     margin-bottom: 10px;
 }
+
+.programs__home {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.programs__images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.programs__home h1,
+.programs__home p {
+    margin-bottom: 20px;
+}
+
+.program__logo {
+    width: 30%;
+}
+
+.program__logo img {
+    border-radius: 8px;
+}
+
+.program__logo h2,
+.program__logo p {
+    margin-top: 20px;
+}
