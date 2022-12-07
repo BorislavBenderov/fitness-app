@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Logout } from "../auth/Logout";
 
 export const Header = () => {
     return (
@@ -16,9 +17,7 @@ export const Header = () => {
                 <li>
                     <Link to="/fitness-programs">Programs</Link>
                 </li>
-                <li>
-                    <Link to="#">Logout</Link>
-                </li>
+                <Logout />
             </ul>
         </header>
     );
