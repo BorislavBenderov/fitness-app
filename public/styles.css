@@ -26,9 +26,11 @@ h6 {
 }
 
 body {
-    background-color: rgba(173, 216, 230, 0.266);
+    background-color: white;
     -webkit-font-smoothing: antialiased;
     font-family: 'roboto', sans-serif;
+    width: 900px;
+    margin: auto;
 }
 
 img {
@@ -135,13 +137,28 @@ input:focus {
 
 .fitness {
     display: flex;
-    width: 500px;
-    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.fitness__content {
+    display: flex;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+    border-bottom: 1px solid rgba(28, 27, 27, 0.112);
+}
+
+.header__container h3 {
+    color: rgba(255, 0, 0, 0.661);
+    font-size: 25px;
 }
 
 .nav {
     display: flex;
-    margin-top: 10px;
 }
 
 .nav li {
@@ -149,8 +166,6 @@ input:focus {
 }
 
 .fitness__home {
-    margin-top: 200px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -158,17 +173,12 @@ input:focus {
 
 .fitness__home button {
     background-color: rgba(255, 0, 0, 0.661);
-    width: 100px;
+    width: 300px;
+    height: 50px;
     text-align: center;
     padding: 10px 0;
     border-radius: 8px;
     color: white;
-}
-
-.fitness__home h3 {
-    color: rgba(255, 0, 0, 0.661);
-    ;
-    font-size: 25px;
 }
 
 .fitness__home h1 {
@@ -177,6 +187,10 @@ input:focus {
 
 .fitness__home p {
     font-size: 20px;
+}
+
+.fitness__img img {
+    border-radius: 8px;
 }
 
 .fitness__programs {
