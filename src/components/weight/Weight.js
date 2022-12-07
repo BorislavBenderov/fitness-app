@@ -32,11 +32,15 @@ export const Weight = () => {
 
         const averageWeeklyWeight = Number((weeklyWeight / dailyWeights.length).toFixed(2));
 
-        await updateDoc(doc(database, 'fitness', loggedUser.uid), {
-            averageWeeklyWeight
-        })
+        try {
+            await updateDoc(doc(database, 'fitness', loggedUser.uid), {
+                averageWeeklyWeight
+            })
+        } catch (error) {
+            alert(error.message);
+        }
     }
-    
+
     return (
         <div className="auth">
             <div className="auth__container">
