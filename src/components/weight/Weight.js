@@ -1,10 +1,14 @@
 import { doc, updateDoc } from "firebase/firestore";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import { FitnessContext } from '../../contexts/FitnessContext';
 import { database } from "../../firebaseConfig";
 
 export const Weight = () => {
     const { loggedUser } = useContext(AuthContext);
+    const { fitness } = useContext(FitnessContext);
+
+    const currentUserWeight = fitness.find(weight => weight.id === loggedUser.uid);
 
     const onWeightCalculate = async (e) => {
         e.preventDefault();
@@ -61,6 +65,12 @@ export const Weight = () => {
                     <label htmlFor="sundayWeight" />
                     <input type="text" placeholder="Sunday Weight in kg" id="sundayWeight" name="sundayWeight" />
                     <button type="submit">Calculate</button>
+                    {currentUserWeight?.averageWeeklyWeight
+                        ? <div className="calories">
+                            <p>Average Weekly Weight:</p>
+                            <p>{currentUserWeight.averageWeeklyWeight}</p>
+                        </div>
+                        : ''}
                 </form>
             </div>
         </div>
