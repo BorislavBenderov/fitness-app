@@ -1,22 +1,14 @@
-import { collection, doc, onSnapshot, updateDoc } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
+import { doc, updateDoc } from "firebase/firestore";
+import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import { FitnessContext } from "../../contexts/FitnessContext";
 import { database } from "../../firebaseConfig";
 
 export const Calories = () => {
-    const [calories, setCalories] = useState([]);
     const { loggedUser } = useContext(AuthContext);
+    const { fitness } = useContext(FitnessContext);
 
-    useEffect(() => {
-        onSnapshot(collection(database, 'calories'), (snapshot) => {
-            setCalories(snapshot.docs.map((item) => {
-                return { ...item.data(), id: item.id }
-            }));
-        });
-    }, []);
-
-    const currentUserCalories = calories.find(calorie => calorie.id === loggedUser.uid);
-    console.log(currentUserCalories);
+    const currentUserCalories = fitness.find(calorie => calorie.id === loggedUser.uid);
 
     const onClick = async (e) => {
         e.preventDefault();
@@ -63,7 +55,7 @@ export const Calories = () => {
         const muscleGain = maintenance + 300;
         const fatLoss = maintenance - 400;
 
-        await updateDoc(doc(database, 'calories', loggedUser.uid), {
+        await updateDoc(doc(database, 'fitness', loggedUser.uid), {
             maintenance,
             muscleGain,
             fatLoss
