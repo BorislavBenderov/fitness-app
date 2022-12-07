@@ -55,11 +55,15 @@ export const Calories = () => {
         const muscleGain = maintenance + 300;
         const fatLoss = maintenance - 400;
 
-        await updateDoc(doc(database, 'fitness', loggedUser.uid), {
-            maintenance,
-            muscleGain,
-            fatLoss
-        })
+        try {
+            await updateDoc(doc(database, 'fitness', loggedUser.uid), {
+                maintenance,
+                muscleGain,
+                fatLoss
+            })
+        } catch (error) {
+            alert(error.message);
+        }
     }
 
     return (
