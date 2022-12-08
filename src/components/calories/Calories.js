@@ -1,10 +1,11 @@
 import { doc, updateDoc } from "firebase/firestore";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { FitnessContext } from "../../contexts/FitnessContext";
 import { database } from "../../firebaseConfig";
 
 export const Calories = () => {
+    const [err, setErr] = useState('');
     const { loggedUser } = useContext(AuthContext);
     const { fitness } = useContext(FitnessContext);
 
@@ -22,12 +23,12 @@ export const Calories = () => {
         const activity = formData.get('activity');
 
         if (weight === '' || height === '' || age === '') {
-            alert('Please fill all the fields!');
+            setErr('Please fill all the fields!');
             return;
         }
 
         if (weight !== Number(weight) || height !== Number(height) || age !== Number(age)) {
-            alert('Please add a number!');
+            setErr('Please add a number!');
             return;
         }
 
@@ -70,9 +71,10 @@ export const Calories = () => {
                 maintenance,
                 muscleGain,
                 fatLoss
-            })
+            });
+            setErr('');
         } catch (error) {
-            alert(error.message);
+            setErr(error.message);
         }
     }
 
@@ -103,6 +105,7 @@ export const Calories = () => {
                         <option value="extraactive">Extra active (very hard exercise/sports & a physical job)</option>
                     </select>
                     <button type="submit">Calculate</button>
+                    <p className="errors">{err}</p>
                     {currentUserCalories?.maintenance
                         ? <div className="calories">
                             <p>Daily Calories to:</p>
