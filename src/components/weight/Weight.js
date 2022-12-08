@@ -1,10 +1,11 @@
 import { doc, updateDoc } from "firebase/firestore";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { FitnessContext } from '../../contexts/FitnessContext';
 import { database } from "../../firebaseConfig";
 
 export const Weight = () => {
+    const [err, setErr] = useState('');
     const { loggedUser } = useContext(AuthContext);
     const { fitness } = useContext(FitnessContext);
 
@@ -29,13 +30,13 @@ export const Weight = () => {
         if (mondayWeight !== Number(mondayWeight) || tuesdayWeight !== Number(tuesdayWeight) || wednesdayWeight !== Number(wednesdayWeight) ||
             thursdayWeight !== Number(thursdayWeight) || fridayWeight !== Number(fridayWeight) || saturdayWeight !== Number(saturdayWeight) ||
             sundayWeight !== Number(sundayWeight)) {
-            alert('Please add a number!');
+            setErr('Please add a number!');
             return;
         }
 
         if (mondayWeight === 0 && tuesdayWeight === 0 && wednesdayWeight === 0 && thursdayWeight === 0
             && fridayWeight === 0 && saturdayWeight === 0 && sundayWeight === 0) {
-            alert('Please fill at least one field!');
+            setErr('Please fill at least one field!');
             return;
         }
 
@@ -52,9 +53,10 @@ export const Weight = () => {
         try {
             await updateDoc(doc(database, 'fitness', loggedUser.uid), {
                 averageWeeklyWeight
-            })
+            });
+            setErr('');
         } catch (error) {
-            alert(error.message);
+            setErr(error.message);
         }
     }
 
@@ -78,6 +80,7 @@ export const Weight = () => {
                     <label htmlFor="sundayWeight" />
                     <input type="text" placeholder="Sunday Weight in kg" id="sundayWeight" name="sundayWeight" />
                     <button type="submit">Calculate</button>
+                    <p className="errors">{err}</p>
                     {currentUserWeight?.averageWeeklyWeight
                         ? <div className="calories">
                             <p>Average Weekly Weight:</p>

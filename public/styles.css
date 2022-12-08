@@ -357,6 +357,7 @@ footer {
 .errors {
     text-align: center;
     color: red;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 750px) {
