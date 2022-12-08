@@ -33,6 +33,12 @@ export const Weight = () => {
             return;
         }
 
+        if (mondayWeight === 0 && tuesdayWeight === 0 && wednesdayWeight === 0 && thursdayWeight === 0
+            && fridayWeight === 0 && saturdayWeight === 0 && sundayWeight === 0) {
+            alert('Please fill at least one field!');
+            return;
+        }
+
         arr.push(mondayWeight, tuesdayWeight, wednesdayWeight, thursdayWeight, fridayWeight, saturdayWeight, sundayWeight);
 
         const dailyWeights = arr.filter(weight => weight !== 0);
