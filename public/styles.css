@@ -198,7 +198,7 @@ input:focus {
 
 .fitness__programs {
     width: 500px;
-    margin: auto;
+    margin: 40px auto;
     text-align: center;
 }
 
@@ -225,12 +225,11 @@ input:focus {
 }
 
 .program__container {
-    border: 1px solid black;
     margin-top: 20px;
-    padding: 20px 0;
+    padding: 20px 1px;
     border-radius: 8px;
-    background-color: lightblue;
     color: white;
+    background-color: rgb(198, 206, 246);
 }
 
 .program__container h2 {
@@ -327,6 +326,7 @@ footer {
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid rgba(28, 27, 27, 0.112);
+    margin-top: 20px;
 }
 
 .fitness__cal .average__weight {
@@ -409,11 +409,30 @@ footer {
         width: 280px;
         margin: auto;
     }
+
+    .fitness__programs {
+        width: 400px;
+    }
+
+    .programs__btns button {
+        width: 170px;
+    }
 }
 
 @media screen and (max-width: 450px) {
-    .food__img {
+
+    .food__img,
+    .fitness__img img {
         width: 280px;
         height: 280px;
     }
+
+    .fitness__programs {
+        width: 280px;
+    }
+
+    .programs__btns button {
+        width: 110px;
+    }
+
 }
