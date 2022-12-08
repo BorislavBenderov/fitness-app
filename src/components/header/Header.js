@@ -11,6 +11,7 @@ export const Header = () => {
             <ul className="nav">
                 {loggedUser
                     ? <>
+                        <p>Hi, <b className="email">{loggedUser.email}</b></p>
                         <li>
                             <Link to="/">Home</Link>
                         </li>
