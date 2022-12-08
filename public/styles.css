@@ -29,7 +29,7 @@ body {
     background-color: white;
     -webkit-font-smoothing: antialiased;
     font-family: 'roboto', sans-serif;
-    width: 900px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -62,6 +62,7 @@ li {
 a {
     text-decoration: none;
     display: block;
+    color: black;
 }
 
 /* MAIN CSS */
@@ -161,7 +162,8 @@ input:focus {
     display: flex;
 }
 
-.nav li {
+.nav li,
+.nav p {
     margin-right: 10px;
 }
 
@@ -171,7 +173,8 @@ input:focus {
     justify-content: space-around;
 }
 
-.fitness__home button {
+.fitness__home button,
+.fitness__cal button {
     background-color: rgba(255, 0, 0, 0.661);
     width: 300px;
     height: 50px;
@@ -203,6 +206,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    text-align: end;
 }
 
 .fitness__cal h1 {
@@ -225,7 +229,7 @@ input:focus {
     margin-top: 20px;
     padding: 20px 0;
     border-radius: 8px;
-    background-color: rgba(255, 0, 0, 0.661);
+    background-color: lightblue;
     color: white;
 }
 
@@ -323,4 +327,93 @@ footer {
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid rgba(28, 27, 27, 0.112);
+}
+
+.fitness__cal .average__weight {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.email {
+    color: rgba(255, 0, 0, 0.661);
+}
+
+.programs__btns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.programs__btns button {
+    background-color: rgba(255, 0, 0, 0.661);
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    color: white;
+}
+
+.errors {
+    text-align: center;
+    color: red;
+}
+
+@media screen and (max-width: 750px) {
+    .logged__user {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .fitness__content {
+        flex-direction: column;
+    }
+
+    .fitness__home {
+        margin-bottom: 40px;
+        align-items: center;
+    }
+
+    .fitness__home h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .fitness__home p {
+        margin-bottom: 10px;
+    }
+
+    .fitness__img {
+        margin: auto;
+    }
+
+    .fitness__cal h1,
+    .fitness__cal p,
+    .fitness__cal a {
+        text-align: center;
+    }
+
+    .fitness__cal h1 {
+        margin: 20px 0;
+    }
+
+    .fitness__cal p {
+        margin-bottom: 10px;
+    }
+
+    .programs__images {
+        flex-direction: column;
+    }
+
+    .program__logo {
+        width: 280px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .food__img {
+        width: 280px;
+        height: 280px;
+    }
 }
