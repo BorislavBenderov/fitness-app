@@ -436,3 +436,9 @@ footer {
     }
 
 }
+
+@media screen and (max-width: 350px) {
+    .auth {
+        width: 260px;
+    }
+}
