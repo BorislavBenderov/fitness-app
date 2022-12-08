@@ -12,6 +12,7 @@ import { Calories } from './components/calories/Calories';
 import { Weight } from './components/weight/Weight';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
+import { ProtectedRoutes } from './ProtectedRoutes';
 
 function App() {
   return (
@@ -23,12 +24,14 @@ function App() {
             <Route path='/' element={<Fitness />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/fitness-programs' element={<FitnessPrograms />} />
-            <Route path='/fitness-programs/fullbody' element={<FullBodyProgram />} />
-            <Route path='/fitness-programs/upper-lower' element={<UpperLowerProgram />} />
-            <Route path='/fitness-programs/push-pull-legs' element={<PushPullLegsProgram />} />
-            <Route path='/calories' element={<Calories />} />
-            <Route path='/weight' element={<Weight />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path='/fitness-programs' element={<FitnessPrograms />} />
+              <Route path='/fitness-programs/fullbody' element={<FullBodyProgram />} />
+              <Route path='/fitness-programs/upper-lower' element={<UpperLowerProgram />} />
+              <Route path='/fitness-programs/push-pull-legs' element={<PushPullLegsProgram />} />
+              <Route path='/calories' element={<Calories />} />
+              <Route path='/weight' element={<Weight />} />
+            </Route>
           </Routes>
           <Footer />
         </div>
