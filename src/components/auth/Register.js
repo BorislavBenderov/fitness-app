@@ -1,9 +1,11 @@
 import { browserLocalPersistence, createUserWithEmailAndPassword, setPersistence } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth, database } from '../../firebaseConfig';
 
 export const Register = () => {
+    const [err, setErr] = useState('');
     const navigate = useNavigate();
 
     const onRegister = (e) => {
@@ -16,12 +18,12 @@ export const Register = () => {
         const repeatPassword = formData.get('repeatPassword');
 
         if (email === '' || password === '' || repeatPassword === '') {
-            alert('Please fill all the fields!');
+            setErr('Please fill all the fields!');
             return;
         }
 
         if (password !== repeatPassword) {
-            alert('Your password and confirmation password do not match!');
+            setErr('Your password and confirmation password do not match!');
             return;
         }
 
@@ -32,10 +34,10 @@ export const Register = () => {
                         setDoc(doc(database, 'fitness', res.user.uid), {
                             email: res.user.email
                         })
-                        navigate('/fitness');
+                        navigate('/');
                     })
                     .catch((err) => {
-                        alert(err.message);
+                        setErr(err.message);
                     })
             })
     }
@@ -61,12 +63,13 @@ export const Register = () => {
                         id="repeatPassword"
                         name="repeatPassword"
                     />
+                    <p className="errors">{err}</p>
                     <button type="submit">Register</button>
                 </form>
             </div>
             <div className="auth__action">
                 <p>Have an account?</p>
-                <Link to="/">Log in</Link>
+                <Link to="/login">Log in</Link>
             </div>
         </div>
     );

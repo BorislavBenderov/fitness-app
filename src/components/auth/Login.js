@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { browserLocalPersistence, setPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../../firebaseConfig";
+import { useState } from "react";
 
 export const Login = () => {
+    const [err, setErr] = useState('');
     const navigate = useNavigate();
 
     const onLogin = (e) => {
@@ -14,7 +16,7 @@ export const Login = () => {
         const password = formData.get('password');
 
         if (email === '' || password === '') {
-            alert('Please fill all the fields!');
+            setErr('Please fill all the fields!');
             return;
         }
 
@@ -22,10 +24,10 @@ export const Login = () => {
             .then(() => {
                 signInWithEmailAndPassword(auth, email, password)
                     .then(() => {
-                        navigate('/fitness');
+                        navigate('/');
                     })
                     .catch((err) => {
-                        alert(err.message);
+                        setErr(err.message);
                     })
             })
     }
@@ -44,6 +46,7 @@ export const Login = () => {
                         id="password"
                         name="password"
                     />
+                    <p className="errors">{err}</p>    
                     <button type="submit">Log In</button>
                 </form>
             </div>
