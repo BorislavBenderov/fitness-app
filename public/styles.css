@@ -314,3 +314,13 @@ input:focus {
 .program__logo p {
     margin-top: 20px;
 }
+
+.programs__img {
+    height: 200px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(28, 27, 27, 0.112);
+}
