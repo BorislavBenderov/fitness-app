@@ -11,6 +11,7 @@ import { PushPullLegsProgram } from './components/fitness-programs/PushPullLegsP
 import { Calories } from './components/calories/Calories';
 import { Weight } from './components/weight/Weight';
 import { Header } from './components/header/Header';
+import { Footer } from './components/footer/Footer';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='/calories' element={<Calories />} />
             <Route path='/weight' element={<Weight />} />
           </Routes>
+          <Footer />
         </div>
       </FitnessContextProvider>
     </AuthContextProvider>
