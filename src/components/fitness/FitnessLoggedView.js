@@ -4,17 +4,33 @@ import FULLBODY from '../../assets/fullbody.jpg';
 import UPPERLOWER from '../../assets/upper-lower.jpg';
 import PUSHPULLLEGS from '../../assets/push-pull-legs.png';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { FitnessContext } from '../../contexts/FitnessContext';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const FitnessLoggedView = () => {
+    const { fitness } = useContext(FitnessContext);
+    const { loggedUser } = useContext(AuthContext);
+
+    const currentUserCalories = fitness.find(calorie => calorie.id === loggedUser.uid);
+
     return (
         <div className="logged__user">
             <div className="fitness">
                 <section className="fitness__content">
-                    <div className="fitness__home">
-                        <h1>Find Your Calories Needs</h1>
-                        <p>Start here</p>
-                        <Link to='/calories'><button>Start</button></Link>
-                    </div>
+                    {currentUserCalories?.maintenance
+                        ? <div className="fitness__home">
+                            <h1>Your Current Daily Calories</h1>
+                            <p>To Maintain Weight: {currentUserCalories.maintenance}</p>
+                            <p>To Gain Muscle: {currentUserCalories.muscleGain}</p>
+                            <p>To Loss Fat: {currentUserCalories.fatLoss}</p>
+                            <Link to='/calories'><button>Start</button></Link>
+                        </div>
+                        : <div className="fitness__home">
+                            <h1>Find Your Calories Needs</h1>
+                            <p>Start here</p>
+                            <Link to='/calories'><button>Start</button></Link>
+                        </div>}
                     <div className="fitness__img">
                         <img src={FOODIMG} className='food__img' alt="" />
                     </div>
@@ -25,11 +41,17 @@ export const FitnessLoggedView = () => {
                     <div className="fitness__img">
                         <img className='food__img' src={WEIGHTIMG} alt="" />
                     </div>
-                    <div className="fitness__cal">
-                        <h1>Find Your Weekly Weight</h1>
-                        <p>Start here</p>
-                        <Link to='/weight'><button>Start</button></Link>
-                    </div>
+                    {currentUserCalories?.averageWeeklyWeight
+                        ? <div className="fitness__cal">
+                            <h1>Your Average Weekly Weight</h1>
+                            <p className='average__weight'>{currentUserCalories.averageWeeklyWeight} kg</p>
+                            <Link to='/weight'><button>Start</button></Link>
+                        </div>
+                        : <div className="fitness__cal">
+                            <h1>Find Your Weekly Weight</h1>
+                            <p>Start here</p>
+                            <Link to='/weight'><button>Start</button></Link>
+                        </div>}
                 </section>
             </div>
             <div className="programs__home">
