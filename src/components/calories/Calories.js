@@ -22,7 +22,7 @@ export const Calories = () => {
         const sex = formData.get('sex');
         const activity = formData.get('activity');
 
-        if (weight === '' || height === '' || age === '') {
+        if (weight === 0 || height === 0 || age === 0) {
             setErr('Please fill all the fields!');
             return;
         }
