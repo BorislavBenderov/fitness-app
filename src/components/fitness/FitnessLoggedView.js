@@ -21,9 +21,9 @@ export const FitnessLoggedView = () => {
                     {currentUserCalories?.maintenance
                         ? <div className="fitness__home">
                             <h1>Your Current Daily Calories</h1>
-                            <p>To Maintain Weight: {currentUserCalories.maintenance}</p>
-                            <p>To Gain Muscle: {currentUserCalories.muscleGain}</p>
-                            <p>To Loss Fat: {currentUserCalories.fatLoss}</p>
+                            <p>To Maintain Weight: {currentUserCalories.maintenance} kcal</p>
+                            <p>To Gain Muscle: {currentUserCalories.muscleGain} kcal</p>
+                            <p>To Loss Fat: {currentUserCalories.fatLoss} kcal</p>
                             <Link to='/calories'><button>Start</button></Link>
                         </div>
                         : <div className="fitness__home">

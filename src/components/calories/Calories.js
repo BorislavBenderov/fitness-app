@@ -109,9 +109,9 @@ export const Calories = () => {
                     {currentUserCalories?.maintenance
                         ? <div className="calories">
                             <p>Daily Calories to:</p>
-                            <p>Mantain Weight - {currentUserCalories.maintenance}</p>
-                            <p>Gain Muscle - {currentUserCalories.muscleGain}</p>
-                            <p>Loss Fat - {currentUserCalories.fatLoss}</p>
+                            <p>Mantain Weight - {currentUserCalories.maintenance} kcal</p>
+                            <p>Gain Muscle - {currentUserCalories.muscleGain} kcal</p>
+                            <p>Loss Fat - {currentUserCalories.fatLoss} kcal</p>
                         </div>
                         : ''}
                 </form>
