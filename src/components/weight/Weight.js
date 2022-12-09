@@ -84,7 +84,7 @@ export const Weight = () => {
                     {currentUserWeight?.averageWeeklyWeight
                         ? <div className="calories">
                             <p>Average Weekly Weight:</p>
-                            <p>{currentUserWeight.averageWeeklyWeight}</p>
+                            <p>{currentUserWeight.averageWeeklyWeight} kg</p>
                         </div>
                         : ''}
                 </form>
