@@ -360,6 +360,13 @@ footer {
     margin-top: 10px;
 }
 
+select {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
 @media screen and (max-width: 750px) {
     .logged__user {
         max-width: 500px;
