@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Fitness Application with React JS
+![My Image](/src/assets/home-min.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+Fitness application created with React JS. In this application users have possibility to
+calculate their daily calories intake for maintain weight, gain muscle or loss fat. They
+can calculate their weekly average weight and follow how the weight move for their goal.
+They have possibility to download one of three fitness programs relative to their fitness
+experience.
 
-In the project directory, you can run:
+## Services
 
-### `npm start`
+# Login
+![My Image](/src/assets/login-min.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This service is initialized with two users, which can be used for immediate testing:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- borko@abv.bg: 123456
+- gabi@abv.bg: 123456
 
-### `npm test`
+# Register
+![My Image](/src/assets/register-min.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create a new user by entered email, password and confirmation password.
 
-### `npm run build`
+# Home
+![My Image](/src/assets/logged-home-min.png)
+![My Image](/src/assets/logged-home-2-min.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After login or register user will be redirect to a home page. On this page users can see fitness app
+services like track their calories, calculate their weekly weight and choose a fitness program
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Calories
+![My Image](/src/assets/calories-min.png)
 
-### `npm run eject`
+After click on calories button in navigation panel or on start button on daily calories section in home
+page users will see their daily calories calculator and calculate their calories for maintain weight,
+build muscle or loss fat.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Weight
+![My Image](/src/assets/weight-min.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After click on weight button in navigation panel or on start button on average weekly weight section in
+home page users will see their weekly average weight calculator and follow their weight to achieve their
+goal.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Programs
+![My Image](/src/assets/programs-min.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+After click on programs button in navigation panel users will see programs container with three programs.
+When user click on download button on any program hi will download the program on his computer. When he click
+on view program button he will see clicked program on the screen.
 
-## Learn More
+![My Image](/src/assets/fullbo-min.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Logout
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+When user click on five icon in navigation panel his session has expired.
 
-### Code Splitting
+# Guest users
+![My Image](/src/assets/home-min.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Guest users can see home page but they can not make any actions. If they click on any of start button on the page
+they will be redirect to a login page.
