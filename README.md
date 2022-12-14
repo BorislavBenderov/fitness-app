@@ -11,7 +11,7 @@ experience.
 
 ## Services
 
-# Login
+### Login
 ![My Image](/src/assets/login-min.png)
 
 This service is initialized with two users, which can be used for immediate testing:
@@ -19,12 +19,12 @@ This service is initialized with two users, which can be used for immediate test
 - borko@abv.bg: 123456
 - gabi@abv.bg: 123456
 
-# Register
+### Register
 ![My Image](/src/assets/register-min.png)
 
 Create a new user by entered email, password and confirmation password.
 
-# Home
+### Home
 ![My Image](/src/assets/logged-home-min.png)
 ![My Image](/src/assets/logged-home-2-min.png)
 
@@ -32,21 +32,21 @@ After login or register user will be redirect to a home page. On this page users
 services like track their calories, calculate their weekly weight and choose a fitness program
 
 
-# Calories
+### Calories
 ![My Image](/src/assets/calories-min.png)
 
 After click on calories button in navigation panel or on start button on daily calories section in home
 page users will see their daily calories calculator and calculate their calories for maintain weight,
 build muscle or loss fat.
 
-# Weight
+### Weight
 ![My Image](/src/assets/weight-min.png)
 
 After click on weight button in navigation panel or on start button on average weekly weight section in
 home page users will see their weekly average weight calculator and follow their weight to achieve their
 goal.
 
-# Programs
+### Programs
 ![My Image](/src/assets/programs-min.png)
 
 After click on programs button in navigation panel users will see programs container with three programs.
@@ -55,12 +55,16 @@ on view program button he will see clicked program on the screen.
 
 ![My Image](/src/assets/fullbo-min.png)
 
-# Logout
+### Logout
 
 When user click on five icon in navigation panel his session has expired.
 
-# Guest users
+### Guest users
 ![My Image](/src/assets/home-min.png)
 
 Guest users can see home page but they can not make any actions. If they click on any of start button on the page
 they will be redirect to a login page.
+
+## Live Demo
+
+https://borislavbenderov.github.io/fitness-app
