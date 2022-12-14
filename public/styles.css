@@ -434,6 +434,11 @@ select {
     .programs__btns button {
         width: 170px;
     }
+
+    .nav {
+        flex-direction: column;
+        margin-top: 5px;
+    }
 }
 
 @media screen and (max-width: 450px) {
