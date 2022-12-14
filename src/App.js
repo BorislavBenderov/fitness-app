@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Login } from './components/auth/Login';
 import { Register } from './components/auth/Register';
 import { Fitness } from './components/fitness/Fitness';
+import { NotFound } from './components/not-found/NotFound';
 import { FitnessPrograms } from './components/fitness-programs/FitnessPrograms';
 import { AuthContextProvider } from './contexts/AuthContext';
 import { FitnessContextProvider } from './contexts/FitnessContext';
@@ -21,6 +22,7 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
+            <Route path='*' element={<NotFound />} />
             <Route path='/' element={<Fitness />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
