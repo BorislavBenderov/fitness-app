@@ -1,0 +1,452 @@
+/* RESET CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: black;
+}
+
+body {
+    background-color: white;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'roboto', sans-serif;
+    max-width: 900px;
+    margin: auto;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+input,
+button,
+select {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+/* MAIN CSS */
+.auth {
+    width: 335px;
+    margin: 50px auto;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.auth__container {
+    background-color: white;
+    padding: 10px 40px 100px 40px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.auth__container h1 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth__form input,
+.auth__form textarea {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.auth__form textarea {
+    height: 200px;
+}
+
+.auth__form input::placeholder {
+    font-weight: 500;
+    font-size: small;
+}
+
+.auth__form button {
+    background-color: rgba(255, 0, 0, 0.661);
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.auth__action {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 5px 0;
+}
+
+.auth__action a {
+    color: rgba(255, 0, 0, 0.661);
+    font-weight: 600;
+}
+
+.fitness {
+    display: flex;
+    margin-top: 120px;
+}
+
+.fitness__content {
+    display: flex;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+    border-bottom: 1px solid rgba(28, 27, 27, 0.112);
+}
+
+.header__container h3 {
+    color: rgba(255, 0, 0, 0.661);
+    font-size: 25px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav li,
+.nav p {
+    margin-right: 10px;
+}
+
+.fitness__home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.fitness__home button,
+.fitness__cal button {
+    background-color: rgba(255, 0, 0, 0.661);
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    color: white;
+}
+
+.fitness__home h1 {
+    font-size: 45px;
+}
+
+.fitness__home p {
+    font-size: 20px;
+}
+
+.fitness__img img {
+    border-radius: 8px;
+}
+
+.fitness__programs {
+    width: 500px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.fitness__cal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: end;
+}
+
+.fitness__cal h1 {
+    font-size: 45px;
+    text-align: end;
+}
+
+.fitness__cal p {
+    font-size: 20px;
+    text-align: end;
+}
+
+.food__img {
+    height: 360px;
+    width: 420px;
+}
+
+.program__container {
+    margin-top: 20px;
+    padding: 20px 1px;
+    border-radius: 8px;
+    color: white;
+    background-color: rgb(198, 206, 246);
+}
+
+.program__container h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.program__structure {
+    width: 500px;
+    margin: auto;
+}
+
+.program__day {
+    background-color: rgba(255, 0, 0, 0.661);
+    color: white;
+    border: 1px solid black;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.program__day h1 {
+    text-align: center;
+    color: white;
+}
+
+.exercises__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sets__reps p {
+    text-align: center;
+}
+
+.exercises p,
+.sets__reps p {
+    margin-top: 10px;
+}
+
+.exercises h4,
+.sets__reps h4 {
+    color: rgb(75, 74, 74);
+}
+
+.calories {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(255, 0, 0, 0.661);
+    padding: 5px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+}
+
+.calories p {
+    margin-bottom: 10px;
+}
+
+.programs__home {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.programs__images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.programs__home h1,
+.programs__home p {
+    margin-bottom: 20px;
+}
+
+.program__logo {
+    width: 30%;
+}
+
+.program__logo img {
+    border-radius: 8px;
+}
+
+.program__logo h2,
+.program__logo p {
+    margin-top: 20px;
+}
+
+.programs__img {
+    height: 200px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(28, 27, 27, 0.112);
+    margin-top: 20px;
+}
+
+.fitness__cal .average__weight {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.email {
+    color: rgba(255, 0, 0, 0.661);
+}
+
+.programs__btns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.programs__btns button {
+    background-color: rgba(255, 0, 0, 0.661);
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    color: white;
+}
+
+.errors {
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+}
+
+select {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 750px) {
+    .logged__user {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .fitness__content {
+        flex-direction: column;
+    }
+
+    .fitness__home {
+        margin-bottom: 40px;
+        align-items: center;
+    }
+
+    .fitness__home h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .fitness__home p {
+        margin-bottom: 10px;
+    }
+
+    .fitness__img {
+        margin: auto;
+    }
+
+    .fitness__cal h1,
+    .fitness__cal p,
+    .fitness__cal a {
+        text-align: center;
+    }
+
+    .fitness__cal h1 {
+        margin: 20px 0;
+    }
+
+    .fitness__cal p {
+        margin-bottom: 10px;
+    }
+
+    .programs__images {
+        flex-direction: column;
+    }
+
+    .program__logo {
+        width: 280px;
+        margin: auto;
+    }
+
+    .fitness__programs {
+        width: 400px;
+    }
+
+    .programs__btns button {
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .food__img,
+    .fitness__img img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .fitness__programs {
+        width: 280px;
+    }
+
+    .programs__btns button {
+        width: 110px;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    .auth {
+        width: 260px;
+    }
+}
