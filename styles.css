@@ -367,6 +367,15 @@ select {
     margin-bottom: 10px;
 }
 
+.not-found-info {
+    margin: 200px auto;
+    text-align: center;
+}
+
+.not-found-info a {
+    margin-top: 20px;
+}
+
 @media screen and (max-width: 750px) {
     .logged__user {
         max-width: 500px;
