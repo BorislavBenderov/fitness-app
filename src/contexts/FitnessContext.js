@@ -6,17 +6,19 @@ export const FitnessContext = createContext();
 
 export const FitnessContextProvider = ({ children }) => {
     const [fitness, setFitness] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         onSnapshot(collection(database, 'fitness'), (snapshot) => {
             setFitness(snapshot.docs.map((item) => {
                 return { ...item.data(), id: item.id }
             }));
+            setIsLoading(true);
         });
     }, []);
 
     return (
-        <FitnessContext.Provider value={{ fitness }}>
+        <FitnessContext.Provider value={{ fitness, isLoading }}>
             {children}
         </FitnessContext.Provider>
     );
