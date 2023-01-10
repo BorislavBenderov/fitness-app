@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/fitness-app/static/js/main.f9d2ea0a.js",
+    "main.js": "/fitness-app/static/js/main.afb0453e.js",
     "static/media/food-logged.jpg": "/fitness-app/static/media/food-logged.433b6835d31841b1db51.jpg",
     "static/media/push-pull-legs.png": "/fitness-app/static/media/push-pull-legs.0353df019a8481d158ab.png",
     "static/media/health.jpg": "/fitness-app/static/media/health.24fcbdd31618f2460711.jpg",
@@ -12,9 +12,9 @@
     "static/media/upper-lower.xlsx": "/fitness-app/static/media/upper-lower.78c515a7f4e18c72ec66.xlsx",
     "static/media/food.png": "/fitness-app/static/media/food.a68010b11ca614794b38.png",
     "index.html": "/fitness-app/index.html",
-    "main.f9d2ea0a.js.map": "/fitness-app/static/js/main.f9d2ea0a.js.map"
+    "main.afb0453e.js.map": "/fitness-app/static/js/main.afb0453e.js.map"
   },
   "entrypoints": [
-    "static/js/main.f9d2ea0a.js"
+    "static/js/main.afb0453e.js"
   ]
 }
