@@ -6,6 +6,7 @@ import { useState } from "react";
 export const Login = () => {
     const [err, setErr] = useState('');
     const navigate = useNavigate();
+    const [loading,setLoading] = useState(false);
 
     const onLogin = (e) => {
         e.preventDefault();
@@ -19,15 +20,18 @@ export const Login = () => {
             setErr('Please fill all the fields!');
             return;
         }
-
+        
+        setLoading(true);
         setPersistence(auth, browserLocalPersistence)
             .then(() => {
                 signInWithEmailAndPassword(auth, email, password)
                     .then(() => {
                         navigate('/');
+                        setLoading(false);
                     })
                     .catch((err) => {
                         setErr(err.message);
+                        setLoading(false);
                     })
             })
     }
@@ -47,7 +51,7 @@ export const Login = () => {
                         name="password"
                     />
                     <p className="errors">{err}</p>    
-                    <button type="submit">Log In</button>
+                    <button type="submit">{loading ? "Loading..." : "Log in"}</button>
                 </form>
             </div>
             <div className="auth__action">
